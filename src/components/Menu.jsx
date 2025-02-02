@@ -13,6 +13,7 @@ const Menu = ({ pop, setPop }) => {
     const main2 = useRef(null);
     const main3 = useRef(null);
     const main4 = useRef(null);
+    const mm = gsap.matchMedia();
 
     // useGSAP(() => {
     // console.log(pop)
@@ -21,75 +22,150 @@ const Menu = ({ pop, setPop }) => {
     //     setPop(!pop)
     // }
     useEffect(() => {
-        if (pop === true) {
 
-            var tl = gsap.timeline();
-            tl.to(main_out.current, {
-                width: "100%",
-                height: "100vh",
-                duration: 0.4,
-                delay: 0.5,
-            }, "ab");
-            tl.to(main1.current, {
-                width: "80vw",
-                height: "100vh",
-                duration: 0.6,
-                delay: 0.6,
-            }, "ab");
-            tl.to(main2.current, {
-                width: "60vw",
-                height: "75vh",
-                duration: 0.6,
-                delay: 0.7,
-            }, "ab");
-            tl.to(main3.current, {
-                width: "40vw",
-                height: "50vh",
-                duration: 0.6,
-                delay: 0.8,
-            }, "ab");
-            tl.to(main4.current, {
-                width: "20vw",
-                height: "25vh",
-                duration: 0.6,
-                delay: 0.9,
-            }, "ab");
-        }
+        mm.add("(min-width: 1114px)", () => {
+            if (pop === true) {
 
-        if (pop === false) {
+                var tl = gsap.timeline();
+                tl.to(main_out.current, {
+                    width: "100%",
+                    height: "100vh",
+                    duration: 0.4,
+                    delay: 0.5,
+                }, "ab");
+                tl.to(main1.current, {
+                    width: "80vw",
+                    height: "100vh",
+                    duration: 0.6,
+                    delay: 0.6,
+                }, "ab");
+                tl.to(main2.current, {
+                    width: "60vw",
+                    height: "75vh",
+                    duration: 0.6,
+                    delay: 0.7,
+                }, "ab");
+                tl.to(main3.current, {
+                    width: "40vw",
+                    height: "50vh",
+                    duration: 0.6,
+                    delay: 0.8,
+                }, "ab");
+                tl.to(main4.current, {
+                    width: "20vw",
+                    height: "25vh",
+                    duration: 0.6,
+                    delay: 0.9,
+                }, "ab");
+            }
 
-            var tl2 = gsap.timeline();
-            tl2.to(main_out.current, {
-                width: "0%",
-                height: "0vh",
-                duration: 0.4,
-                delay: 0.9,
-            }, "ab2");
-            tl2.to(main1.current, {
-                width: "0vw",
-                height: "0vh",
-                duration: 0.4,
-                delay: 0.8,
-            }, "ab2");
-            tl2.to(main2.current, {
-                width: "0vw",
-                height: "0vh",
-                duration: 0.4,
-                delay: 0.7,
-            }, "ab2");
-            tl2.to(main3.current, {
-                width: "0vw",
-                height: "0vh",
-                duration: 0.4,
-                delay: 0.6,
-            }, "ab2");
-            tl2.to(main4.current, {
-                width: "0vw",
-                height: "0vh",
-                duration: 0.4,
-                delay: 0.5,
-            }, "ab2");
-        }
+            if (pop === false) {
+
+                var tl2 = gsap.timeline();
+                tl2.to(main_out.current, {
+                    width: "0%",
+                    height: "0vh",
+                    duration: 0.4,
+                    delay: 0.9,
+                }, "ab2");
+                tl2.to(main1.current, {
+                    width: "0vw",
+                    height: "0vh",
+                    duration: 0.4,
+                    delay: 0.8,
+                }, "ab2");
+                tl2.to(main2.current, {
+                    width: "0vw",
+                    height: "0vh",
+                    duration: 0.4,
+                    delay: 0.7,
+                }, "ab2");
+                tl2.to(main3.current, {
+                    width: "0vw",
+                    height: "0vh",
+                    duration: 0.4,
+                    delay: 0.6,
+                }, "ab2");
+                tl2.to(main4.current, {
+                    width: "0vw",
+                    height: "0vh",
+                    duration: 0.4,
+                    delay: 0.5,
+                }, "ab2");
+            }
+        });
+
+        mm.add("(max-width:  900px)", () => {
+            if (pop === true) {
+
+                var tl = gsap.timeline();
+                tl.to(main_out.current, {
+                    width: "100%",
+                    height: "100vh",
+                    duration: 0.4,
+                    delay: 0.5,
+                }, "ab");
+                tl.to(main1.current, {
+                    width: "100vw",
+                    height: "100vh",
+                    duration: 0.6,
+                    delay: 0.6,
+                }, "ab");
+                tl.to(main2.current, {
+                    width: "80vw",
+                    height: "75vh",
+                    duration: 0.6,
+                    delay: 0.7,
+                }, "ab");
+                tl.to(main3.current, {
+                    width: "60vw",
+                    height: "50vh",
+                    duration: 0.6,
+                    delay: 0.8,
+                }, "ab");
+                tl.to(main4.current, {
+                    width: "40vw",
+                    height: "25vh",
+                    duration: 0.6,
+                    delay: 0.9,
+                }, "ab");
+            }
+
+            if (pop === false) {
+
+                var tl2 = gsap.timeline();
+                tl2.to(main_out.current, {
+                    width: "0%",
+                    height: "0vh",
+                    duration: 0.4,
+                    delay: 0.9,
+                }, "ab2");
+                tl2.to(main1.current, {
+                    width: "0vw",
+                    height: "0vh",
+                    duration: 0.4,
+                    delay: 0.8,
+                }, "ab2");
+                tl2.to(main2.current, {
+                    width: "0vw",
+                    height: "0vh",
+                    duration: 0.4,
+                    delay: 0.7,
+                }, "ab2");
+                tl2.to(main3.current, {
+                    width: "0vw",
+                    height: "0vh",
+                    duration: 0.4,
+                    delay: 0.6,
+                }, "ab2");
+                tl2.to(main4.current, {
+                    width: "0vw",
+                    height: "0vh",
+                    duration: 0.4,
+                    delay: 0.5,
+                }, "ab2");
+            }
+        });
     })
     // *******************************************
 
@@ -134,13 +210,13 @@ const Menu = ({ pop, setPop }) => {
     // },[pop])
     return (
         <main>
-            <div ref={main_out} className='main_out w-0 h-0  bg-[rgba(0,0,0,0.3)] absolute right-0 top-0 z-50 overflow-hidden'>
+            <div ref={main_out} className='main_out w-0 h-0  bg-[rgba(0,0,0,0.3)] fixed right-0 top-0 z-50 overflow-hidden'>
                 <div className='absolute right-0 top-0'>
                     <div ref={main1} className='main1 hover:bg-[#e96345] hover:text-white cursor-pointer hover:transition-all hover:duration-300 w-0 h-0 bg-white pl-8 absolute right-0 top-0'>
-                        <div className='absolute bottom-8 flex justify-between items-center w-[80%]'>
+                        <div className='absolute bottom-20 lg:bottom-8 flex justify-between items-center w-[80%]'>
                             <h1 className='text-4xl font-[font3]'>Contact</h1>
-                            <div className='flex gap-4'>
-                                <h1 className='text-xl font-[font3] underline'>Privacy Policy</h1>
+                            <div className='gap-4 hidden md:flex'>
+                                <h1 className='text-xl font-[font3] underline '>Privacy Policy</h1>
                                 <h1 className='text-xl font-[font3] underline'>Site By ThunderClap</h1>
                             </div>
                         </div>
